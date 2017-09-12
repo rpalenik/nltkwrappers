@@ -34,7 +34,7 @@ setup(
 
     entry_points={
         'nltkwrappers.nltk': [
-            'tokenizer = nltkwrappers:Tokenizer',
+            'tokenizer = basicnltk.nltkwrappers:Tokenizer',
         ],
     },
 
