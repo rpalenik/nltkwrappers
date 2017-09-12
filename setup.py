@@ -1,23 +1,42 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-    Setup file for basicnltk.
+from setuptools import setup, find_packages
 
-    This file was generated with PyScaffold 2.5.7, a tool that easily
-    puts up a scaffold for your new Python project. Learn more under:
-    http://pyscaffold.readthedocs.org/
-"""
+setup(
+    name='nltkwrappers',
+    version='1.0',
 
-import sys
-from setuptools import setup
+    description='Wrappers for nltk',
 
+    author='Richard Palenik',
+    author_email='rpalenik2@gmail.com',
 
-def setup_package():
-    needs_sphinx = {'build_sphinx', 'upload_docs'}.intersection(sys.argv)
-    sphinx = ['sphinx'] if needs_sphinx else []
-    setup(setup_requires=['six', 'pyscaffold>=2.5a0,<2.6a0'] + sphinx,
-          use_pyscaffold=True)
+    # url='http://git.openstack.org/cgit/openstack/stevedore',
 
+    classifiers=['Development Status :: 3 - Alpha',
+                 'License :: OSI Approved :: Apache Software License',
+                 'Programming Language :: Python',
+                 'Programming Language :: Python :: 2',
+                 'Programming Language :: Python :: 2.7',
+                 'Programming Language :: Python :: 3',
+                 'Programming Language :: Python :: 3.4',
+                 'Intended Audience :: Developers',
+                 'Environment :: Console',
+                 ],
 
-if __name__ == "__main__":
-    setup_package()
+    platforms=['Any'],
+
+    scripts=[],
+
+    provides=['plugins',
+              ],
+
+    packages=find_packages(),
+    include_package_data=True,
+
+    entry_points={
+        'nltkwrappers.nltk': [
+            'tokenizer = nltkwrappers:Tokenizer',
+        ],
+    },
+
+    zip_safe=False,
+)
