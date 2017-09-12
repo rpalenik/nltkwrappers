@@ -26,7 +26,7 @@ setup(
 
     scripts=[],
 
-    provides=['plugins',
+    provides=['nltkwrappers',
               ],
 
     packages=find_packages(),
