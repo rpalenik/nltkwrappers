@@ -24,7 +24,6 @@ class Normalizer(object):
     def cucco_normalize(self, input_bag, item):
         from cucco import Cucco
         cucco = Cucco()
-        print(cucco.normalize(corpus[3].lower()))
         if item=='None':
             self.output_bag = input_bag.map(cucco.normalize)
         else:
